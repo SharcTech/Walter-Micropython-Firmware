@@ -3,6 +3,8 @@
 script_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd "$script_path"
 
+cd ..
+
 git clone --recursive https://github.com/micropython/micropython/
 cd micropython
 git reset --hard 82e69df33e379bf491bea647e217d6d56c5b8090

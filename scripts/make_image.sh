@@ -3,6 +3,8 @@
 script_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd "$script_path"
 
+cd ..
+
 mkdir build
 source esp-idf/export.sh
 cd micropython/ports/esp32
