@@ -38,8 +38,8 @@ import uasyncio
 import ubinascii
 import esp32
 import network
-import walter
-import _walter
+import src.walter as walter
+import src._walter as _walter
 
 SERV_ADDR = "64.225.64.140"
 SERV_PORT = 1999

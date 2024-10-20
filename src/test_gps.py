@@ -309,6 +309,8 @@ async def setup():
         print("Could not configure the GNSS subsystem")
         return False
 
+    print("0")
+
     return True
 
 
@@ -316,6 +318,8 @@ async def loop():
     if not await update_gnss_assistance():
         print("Could not update GNSS assistance data")
         return False
+
+    print ("1")
 
     # Try up to 5 times to get a good fix
     for i in range(5):
@@ -330,6 +334,8 @@ async def loop():
 
         if gnss_fix.estimated_confidence <= MAX_GNSS_CONFIDENCE:
             break
+
+    print("2")
 
     above_threshold = 0
     for sat in gnss_fix.sats:

@@ -4,6 +4,7 @@ import utime as time
 
 # _esp_now_peer = b'\x34\x7d\xf6\xb5\x6f\xa3'
 _esp_now_peer = b'\xff\xff\xff\xff\xff\xff'
+sequence = 0
 
 sta = network.WLAN(network.STA_IF)
 sta.active(True)
@@ -20,9 +21,9 @@ while True:
     print(f'espnow: received {msg} from {host}')
     try:
       segments = msg.decode('utf-8').split("|")
-      now.send(_esp_now_peer, "ACK {}={}".format(segments[0], segments[1]))
     except:
       pass
 
-  # now.send(_esp_now_peer, "hello from WALTER")
-  time.sleep_ms(10)
+  sequence = sequence + 1
+  now.send(_esp_now_peer, b"|{}|CMD|PING".format(sequence))
+  time.sleep_ms(10000)

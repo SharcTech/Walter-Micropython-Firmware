@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export ESPTOOL_PORT=/dev/tty.usbmodem141401
+export ESPTOOL_PORT=/dev/tty.usbmodem11314441
 
 script_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd "$script_path"
